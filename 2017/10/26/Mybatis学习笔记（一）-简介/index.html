@@ -87,10 +87,13 @@
 <meta property="og:site_name" content="Xien">
 <meta property="og:description" content="传统的JDBC编程JDBC(Java Data Base Connectivity) 是JAVA提供的数据库访问规范。典型的桥接模式，将各种数据库的访问抽象成一个同一的接口，再针对各种数据库，具体的实现。  初始化。（注册驱动，配置URL，Username，Password等配置）。Ｃlass.forName　是将具体的 Driver Class 加载到 JVM，然后通过它的静态初始化方法，把自身">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-26T06:13:28.627Z">
+<meta property="og:image" content="https://static.jboss.org/hibernate/images/hibernate_logo_whitebkg_200px.png">
+<meta property="og:image" content="http://www.mybatis.org/images/mybatis-logo.png">
+<meta property="og:updated_time" content="2017-10-26T07:45:56.099Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mybatis学习笔记（一） 简介">
 <meta name="twitter:description" content="传统的JDBC编程JDBC(Java Data Base Connectivity) 是JAVA提供的数据库访问规范。典型的桥接模式，将各种数据库的访问抽象成一个同一的接口，再针对各种数据库，具体的实现。  初始化。（注册驱动，配置URL，Username，Password等配置）。Ｃlass.forName　是将具体的 Driver Class 加载到 JVM，然后通过它的静态初始化方法，把自身">
+<meta name="twitter:image" content="https://static.jboss.org/hibernate/images/hibernate_logo_whitebkg_200px.png">
 
 
 
@@ -342,7 +345,7 @@
       
 
       
-        <h1 id="传统的JDBC编程"><a href="#传统的JDBC编程" class="headerlink" title="传统的JDBC编程"></a>传统的JDBC编程</h1><p>JDBC(Java Data Base Connectivity) 是JAVA提供的数据库访问规范。典型的桥接模式，将各种数据库的访问抽象成一个同一的接口，再针对各种数据库，具体的实现。</p>
+        <h1 id="传统的JDBC编程"><a href="#传统的JDBC编程" class="headerlink" title="传统的JDBC编程"></a>传统的JDBC编程</h1><p><a href="https://en.wikipedia.org/wiki/Java_Database_Connectivity" target="_blank" rel="external">JDBC(Java Data Base Connectivity)</a> 是JAVA提供的数据库访问规范。典型的<a href="https://en.wikipedia.org/wiki/Bridge_pattern" target="_blank" rel="external">桥接模式</a>，将各种数据库的访问抽象成一个同一的接口，再针对各种数据库，具体的实现。</p>
 <ol>
 <li>初始化。（注册驱动，配置URL，Username，Password等配置）。Ｃlass.forName　是将具体的 Driver Class 加载到 JVM，然后通过它的静态初始化方法，把自身注册到 DriverManager 中。</li>
 <li>获取Connection连接（通过 DriverManager 或者 DataSource ）。DriverManager 是典型的工厂方法模式，利用 URL的格式和参数，来创建对应的 Connection。</li>
@@ -357,15 +360,17 @@
 <li>需要对JDBC中可能出现的异常进行捕捉，处理，并且正确的关闭资源。</li>
 <li>需要程序员自己解决 SQL 注入等安全问题</li>
 </ol>
-<h1 id="ORM"><a href="#ORM" class="headerlink" title="ORM"></a>ORM</h1><p>由于JDBC的缺陷，实际工作中很少直接使用它(??)　于是提出了对象关系映射模型(ORM, Object Relational Mapping)。ORM就是关系型数据库表和简单Java对象( Plain Ordinary Java Object, 简称POJO)的映射关系模型。</p>
-<h2 id="Hibernate"><a href="#Hibernate" class="headerlink" title="Hibernate"></a>Hibernate</h2><p>Hibernate 是一个流行的ORM框架，它具有以下特点：</p>
+<h1 id="ORM"><a href="#ORM" class="headerlink" title="ORM"></a><a href="https://en.wikipedia.org/wiki/Object-relational_mapping" target="_blank" rel="external">ORM</a></h1><p>由于JDBC的缺陷，实际工作中很少直接使用它(??)　于是提出了对象关系映射模型(ORM, Object Relational Mapping)。ORM就是关系型数据库表和简单Java对象( Plain Ordinary Java Object, 简称<a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank" rel="external">POJO</a>)的映射关系模型。</p>
+<h2 id="Hibernate"><a href="#Hibernate" class="headerlink" title="Hibernate"></a><a href="http://hibernate.org/" target="_blank" rel="external">Hibernate</a></h2><p><img src="https://static.jboss.org/hibernate/images/hibernate_logo_whitebkg_200px.png" alt="Hibernate"></p>
+<p>Hibernate 是一个流行的ORM框架，它具有以下特点：</p>
 <ol>
 <li>消除了代码的映射规则，把它分离到XML或者注解的配置里</li>
 <li>无需再手动管理数据库连接</li>
 <li>无需再操作多个对象，只需要session即可，也只需要关闭session一个资源</li>
 <li>但是它也是一个比较重的框架，基于全映射；不支持动态SQL；多表关联和复杂的SQL支持较差；不能很好的支持存储过程；虽然有HQL，但是性能较差</li>
 </ol>
-<h2 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a>MyBatis</h2><p>MyBatis是一个半自动的持久化框架，它包含了SQL Maps和DAO(Data Access Objects)。除了提供映射关系以外，还需要我们自己提供SQL语句。它的映射文件包含了以下三个部分：</p>
+<h2 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a><a href="http://www.mybatis.org/mybatis-3/index.html" target="_blank" rel="external">MyBatis</a></h2><p><img src="http://www.mybatis.org/images/mybatis-logo.png" alt="MyBatis"></p>
+<p>MyBatis是一个半自动的持久化框架，它包含了SQL Maps和DAO(Data Access Objects)。除了提供映射关系以外，还需要我们自己提供SQL语句。它的映射文件包含了以下三个部分：</p>
 <ol>
 <li>SQL</li>
 <li>映射规则</li>
