@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Mybatis学习笔记（一） 简介">
+<meta name="description" content="传统的JDBC编程JDBC(Java Data Base Connectivity) 是JAVA提供的数据库访问规范。典型的桥接模式，将各种数据库的访问抽象成一个同一的接口，再针对各种数据库，具体的实现。  初始化。（注册驱动，配置URL，Username，Password等配置）。Ｃlass.forName　是将具体的 Driver Class 加载到 JVM，然后通过它的静态初始化方法，把自身">
 <meta name="keywords" content="Java,MyBatis,Database">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mybatis学习笔记（一） 简介">
 <meta property="og:url" content="http://yoursite.com/2017/10/26/Mybatis学习笔记（一）-简介/index.html">
 <meta property="og:site_name" content="Xien">
-<meta property="og:description" content="Mybatis学习笔记（一） 简介">
+<meta property="og:description" content="传统的JDBC编程JDBC(Java Data Base Connectivity) 是JAVA提供的数据库访问规范。典型的桥接模式，将各种数据库的访问抽象成一个同一的接口，再针对各种数据库，具体的实现。  初始化。（注册驱动，配置URL，Username，Password等配置）。Ｃlass.forName　是将具体的 Driver Class 加载到 JVM，然后通过它的静态初始化方法，把自身">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-26T05:09:13.175Z">
+<meta property="og:updated_time" content="2017-10-26T06:06:12.870Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mybatis学习笔记（一） 简介">
-<meta name="twitter:description" content="Mybatis学习笔记（一） 简介">
+<meta name="twitter:description" content="传统的JDBC编程JDBC(Java Data Base Connectivity) 是JAVA提供的数据库访问规范。典型的桥接模式，将各种数据库的访问抽象成一个同一的接口，再针对各种数据库，具体的实现。  初始化。（注册驱动，配置URL，Username，Password等配置）。Ｃlass.forName　是将具体的 Driver Class 加载到 JVM，然后通过它的静态初始化方法，把自身">
 
 
 
@@ -342,7 +342,30 @@
       
 
       
-        <h1 id="Mybatis学习笔记（一）-简介"><a href="#Mybatis学习笔记（一）-简介" class="headerlink" title="Mybatis学习笔记（一） 简介"></a>Mybatis学习笔记（一） 简介</h1>
+        <h1 id="传统的JDBC编程"><a href="#传统的JDBC编程" class="headerlink" title="传统的JDBC编程"></a>传统的JDBC编程</h1><p>JDBC(Java Data Base Connectivity) 是JAVA提供的数据库访问规范。典型的桥接模式，将各种数据库的访问抽象成一个同一的接口，再针对各种数据库，具体的实现。</p>
+<ol>
+<li>初始化。（注册驱动，配置URL，Username，Password等配置）。Ｃlass.forName　是将具体的 Driver Class 加载到 JVM，然后通过它的静态初始化方法，把自身注册到 DriverManager 中。</li>
+<li>获取Connection连接（通过 DriverManager 或者 DataSource ）。DriverManager 是典型的工厂方法模式，利用 URL的格式和参数，来创建对应的 Connection。</li>
+<li>创建 Statement (包括PrepareStatement和CallableStatement) ，设置参数，执行SQL，查询请求会获取到ResultSet</li>
+<li>通过ResultSet获得一行或多行数据。通过代码转换成POJO对象</li>
+<li>关闭资源（ResultSet，Statement和Connection）</li>
+<li>如果用到事务，还需要主动commit，以及捕获异常，然后rollback</li>
+</ol>
+<p>这是通过JDBC操作数据库的一个标准流程，但是存在着很多问题：</p>
+<ol>
+<li>工作量相对较大，大量重复的样板代码。<strong>重复是个坏味道</strong>; </li>
+<li>需要对JDBC中可能出现的异常进行捕捉，处理，并且正确的关闭资源。</li>
+<li>需要程序员自己解决 SQL 注入等安全问题</li>
+</ol>
+<h1 id="ORM"><a href="#ORM" class="headerlink" title="ORM"></a>ORM</h1><p>由于JDBC的缺陷，实际工作中很少直接使用它(??)　于是提出了对象关系映射模型(ORM, Object Relational Mapping)。ORM就是关系型数据库表和简单Java对象( Plain Ordinary Java Object, 简称POJO)的映射关系模型。</p>
+<h2 id="Hibernate"><a href="#Hibernate" class="headerlink" title="Hibernate"></a>Hibernate</h2><p>Hibernate 是一个流行的ORM框架，它具有以下特点：</p>
+<ol>
+<li>消除了代码的映射规则，把它分离到XML或者注解的配置里</li>
+<li>无需再手动管理数据库连接</li>
+<li>无需再操作多个对象，只需要session即可，也只需要关闭session一个资源</li>
+<li>但是它也是一个比较重的框架，基于全映射；不支持动态SQL；多表关联和复杂的SQL支持较差；不能很好的支持存储过程；虽然有HQL，但是性能较差</li>
+</ol>
+<h2 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a>MyBatis</h2>
       
     </div>
     
@@ -506,7 +529,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mybatis学习笔记（一）-简介"><span class="nav-number">1.</span> <span class="nav-text">Mybatis学习笔记（一） 简介</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#传统的JDBC编程"><span class="nav-number">1.</span> <span class="nav-text">传统的JDBC编程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ORM"><span class="nav-number">2.</span> <span class="nav-text">ORM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hibernate"><span class="nav-number">2.1.</span> <span class="nav-text">Hibernate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MyBatis"><span class="nav-number">2.2.</span> <span class="nav-text">MyBatis</span></a></li></ol></li></ol></div>
             
 
           </div>
