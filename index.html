@@ -432,18 +432,16 @@
 <li>namespace, 定义了这个映射对应的接口，也是一个命名空间。</li>
 <li>sql, 这个是一个可选项，用来定义一个后面SQL语句中会经常用到的语句，本例中是列名，会被所有查询函数用到</li>
 <li>select，表面这是一个查询的语句，id表面它对应的方法名。namespace + id = interface + method，既可以用来对应接口和映射文件，也可以用来全局唯一限定一个语句。<ul>
-<li>parameterType，用来指定参数类型的。一般MyBatis只支持传递一个用户参数（RowBounds不是用户参数），通过#{}表达式引用参数。有一下几种方式可以传递多个参数。<ul>
-<li>通过map，但是它的描述性很差</li>
-<li>通过注解，多个参数都用　@Param 进行注解和命名。例如 findUser(@Param(“name”)String name, @Param(“description”)String description)</li>
-<li>传入一个Bean，这个Bean可以包含所需要的参数字段。推荐</li>
-</ul>
-</li>
-<li>resultType，用来指定返回的类型，MyBatis会自动识别返回的是一个对象还是一个对象的集合。本例中大量的parameterType和resultType都使用到了com.xien.example.pojo.UserBean这个字符串，<strong>重复是个坏味道</strong>，这个可以通过定义typeAlias来解决</li>
+<li>parameterType，用来指定参数类型的</li>
+<li>resultType，用来指定返回的类型，MyBatis会自动识别返回的是一个对象还是一个对象的集合。</li>
 <li>insert/update/delete，和select类型，只是它们默认的resultType是int,　表示SQL所影响的行数　</li>
 </ul>
 </li>
 </ul>
-<h1 id="Step-4-SqlSessionFactory-amp-SqlSession"><a href="#Step-4-SqlSessionFactory-amp-SqlSession" class="headerlink" title="Step 4 SqlSessionFactory &amp; SqlSession"></a>Step 4 SqlSessionFactory &amp; SqlSession</h1>
+<h1 id="Step-4-SqlSessionFactory-amp-SqlSession"><a href="#Step-4-SqlSessionFactory-amp-SqlSession" class="headerlink" title="Step 4 SqlSessionFactory &amp; SqlSession"></a>Step 4 SqlSessionFactory &amp; SqlSession</h1><p>一切准备就绪了，可以把所有模块串在一起跑起来了</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Example</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SqlSessionFactory <span class="title">getSqlSessionFactory</span><span class="params">()</span> throw IOException </span>&#123;</div><div class="line">    String resource = <span class="string">"mybatis-config.xml"</span>;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> SqlSessionFactoryBuilder()</div><div class="line">      .build(Resources.getResourceAsStream(resource));</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">    <span class="keyword">try</span> (SqlSession session = getSqlSessionFactory().openSession()) &#123;</div><div class="line">     UserDao userDao = session.getMapper(UserDao.class);</div><div class="line">      UserBean user1 = <span class="keyword">new</span> UserBean();</div><div class="line">      user1.setId(<span class="number">1</span>);</div><div class="line">      user1.setName(<span class="string">"Xien"</span>);</div><div class="line">      user1.setDescription(<span class="string">"Just a programmer"</span>);</div><div class="line">      userDao.insertUser(user1);</div><div class="line">      </div><div class="line">      UserBean user2 = userDao.getUser(<span class="number">1</span>);</div><div class="line">      </div><div class="line">      userDao.deleteUser(<span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>MyBatis 的核心是SqlSession，可以理解为一个Transaction，通过它来拿到一个Ｍapper接口(通过动态代理实现)，然后对POJO和数据库进行操作。</p>
+
           
         
       
