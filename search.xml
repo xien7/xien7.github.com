@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Mybatis学习笔记（一） 简介]]></title>
+    <url>%2F2017%2F10%2F26%2FMybatis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E7%AE%80%E4%BB%8B%2F</url>
+    <content type="text"><![CDATA[传统的JDBC编程JDBC(Java Data Base Connectivity) 是JAVA提供的数据库访问规范。典型的桥接模式，将各种数据库的访问抽象成一个同一的接口，再针对各种数据库，具体的实现。 初始化。（注册驱动，配置URL，Username，Password等配置）。Ｃlass.forName 是将具体的 Driver Class 加载到 JVM，然后通过它的静态初始化方法，把自身注册到 DriverManager 中。 获取Connection连接（通过 DriverManager 或者 DataSource ）。DriverManager 是典型的工厂方法模式，利用 URL的格式和参数，来创建对应的 Connection。 创建 Statement (包括PrepareStatement和CallableStatement) ，设置参数，执行SQL，查询请求会获取到ResultSet 通过ResultSet获得一行或多行数据。通过代码转换成POJO对象 关闭资源（ResultSet，Statement和Connection） 如果用到事务，还需要主动commit，以及捕获异常，然后rollback 这是通过JDBC操作数据库的一个标准流程，但是存在着很多问题： 工作量相对较大，大量重复的样板代码。重复是个坏味道; 需要对JDBC中可能出现的异常进行捕捉，处理，并且正确的关闭资源。 需要程序员自己解决 SQL 注入等安全问题 ORM由于JDBC的缺陷，实际工作中很少直接使用它(??) 于是提出了对象关系映射模型(ORM, Object Relational Mapping)。ORM就是关系型数据库表和简单Java对象( Plain Ordinary Java Object, 简称POJO)的映射关系模型。 Hibernate Hibernate 是一个流行的ORM框架，它具有以下特点： 消除了代码的映射规则，把它分离到XML或者注解的配置里 无需再手动管理数据库连接 无需再操作多个对象，只需要session即可，也只需要关闭session一个资源 但是它也是一个比较重的框架，基于全映射；不支持动态SQL；多表关联和复杂的SQL支持较差；不能很好的支持存储过程；虽然有HQL，但是性能较差 MyBatis MyBatis是一个半自动的持久化框架，它包含了SQL Maps和DAO(Data Access Objects)。除了提供映射关系以外，还需要我们自己提供SQL语句。它的映射文件包含了以下三个部分： SQL 映射规则 POJO 总结 JDBC在目前很少用到，它需要提供太多的代码，复杂的操作，还极其容易出问题 HIberate是一个流行全自动ORM的框架，但是因为它包装过多，失去了灵活性和性能 Mybatis是一个半自动的ORM框架，它提供了丰富而又灵活的功能。唯一的缺点是需要自己实现SQL，但也就是因为这样，给了程序员更好的灵活性。]]></content>
+      <categories>
+        <category>mybatis</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>MyBatis</tag>
+        <tag>Database</tag>
+      </tags>
+  </entry>
+</search>
