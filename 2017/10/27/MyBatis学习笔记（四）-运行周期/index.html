@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Java,MyBatis,Database," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="Just a programer">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Xien">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="MyBatis 执行一条SQL语句，主要有以下三个步骤：  解析并准备SQL 绑定参数 转换结果  下面主要按照这三个步骤来看它是如何执行的，开发者可以怎样定制这些流程。 解析并准备SQLMyBatis会提取Mapper映射文件中的语句（混合了SQL，Tag 和表达式），并且对它进行解析成为待执行SQL。 动态SQLMyBatis 支持在语句中嵌入某些XML的Tag，以便于根据输入参数，来动态的改">
+<meta name="keywords" content="Java,MyBatis,Database">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MyBatis学习笔记（四）　运行周期">
+<meta property="og:url" content="http://yoursite.com/2017/10/27/MyBatis学习笔记（四）-运行周期/index.html">
 <meta property="og:site_name" content="Xien">
-<meta property="og:description" content="Just a programer">
+<meta property="og:description" content="MyBatis 执行一条SQL语句，主要有以下三个步骤：  解析并准备SQL 绑定参数 转换结果  下面主要按照这三个步骤来看它是如何执行的，开发者可以怎样定制这些流程。 解析并准备SQLMyBatis会提取Mapper映射文件中的语句（混合了SQL，Tag 和表达式），并且对它进行解析成为待执行SQL。 动态SQLMyBatis 支持在语句中嵌入某些XML的Tag，以便于根据输入参数，来动态的改">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-27T07:27:44.813Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xien">
-<meta name="twitter:description" content="Just a programer">
+<meta name="twitter:title" content="MyBatis学习笔记（四）　运行周期">
+<meta name="twitter:description" content="MyBatis 执行一条SQL语句，主要有以下三个步骤：  解析并准备SQL 绑定参数 转换结果  下面主要按照这三个步骤来看它是如何执行的，开发者可以怎样定制这些流程。 解析并准备SQLMyBatis会提取Mapper映射文件中的语句（混合了SQL，Tag 和表达式），并且对它进行解析成为待执行SQL。 动态SQLMyBatis 支持在语句中嵌入某些XML的Tag，以便于根据输入参数，来动态的改">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/27/MyBatis学习笔记（四）-运行周期/"/>
 
 
 
 
 
-  <title>Xien</title>
+  <title>MyBatis学习笔记（四）　运行周期 | Xien</title>
   
 
 
@@ -143,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -271,9 +272,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -303,9 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/27/MyBatis学习笔记（四）-运行周期/" itemprop="url">MyBatis学习笔记（四）　运行周期</a></h1>
+          <h1 class="post-title" itemprop="name headline">MyBatis学习笔记（四）　运行周期</h1>
         
 
         <div class="post-meta">
@@ -399,9 +398,7 @@
       
 
       
-        
-          
-            <p>MyBatis 执行一条SQL语句，主要有以下三个步骤：</p>
+        <p>MyBatis 执行一条SQL语句，主要有以下三个步骤：</p>
 <ol>
 <li>解析并准备SQL</li>
 <li>绑定参数</li>
@@ -446,8 +443,6 @@
 <li>separator，每个元素之间的分隔符</li>
 </ul>
 <h3 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h3>
-          
-        
       
     </div>
     
@@ -462,391 +457,40 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/27/MyBatis学习笔记（三）-生命周期/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xien">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jepg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xien">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/27/MyBatis学习笔记（三）-生命周期/" itemprop="url">MyBatis学习笔记（三）　对象生命周期</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-27T13:48:28+08:00">
-                2017-10-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MyBatis/" itemprop="url" rel="index">
-                    <span itemprop="name">MyBatis</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
-
+            <a href="/tags/MyBatis/" rel="tag"># MyBatis</a>
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/27/MyBatis学习笔记（三）-生命周期/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/27/MyBatis学习笔记（三）-生命周期/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
+            <a href="/tags/Database/" rel="tag"># Database</a>
           
-
-          
-          
-             <span id="/2017/10/27/MyBatis学习笔记（三）-生命周期/" class="leancloud_visitors" data-flag-title="MyBatis学习笔记（三）　对象生命周期">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>之前的例子中涉及到了MyBatis的主要组件和基本用法，本篇文章介绍它们的生命周期，这是十分重要的，利于MyBatis应用的正确性和高性能。</p>
-<h1 id="SqlSessionFactoryBuilder"><a href="#SqlSessionFactoryBuilder" class="headerlink" title="SqlSessionFactoryBuilder"></a>SqlSessionFactoryBuilder</h1><p>它是利用XML或者Java编码来获取资源并构建SqlSessionFactory。</p>
-<p>它唯一的作用就是构建一个多个SqlSessionFactory。</p>
-<p>一旦构建完成，它的生命周期就已经完结。所以一般它都只存在与局部方法中，构建完成后就被回收。</p>
-<h1 id="SqlSessionFactory"><a href="#SqlSessionFactory" class="headerlink" title="SqlSessionFactory"></a>SqlSessionFactory</h1><p>它的作用是用来创建SqlSession，而SqlSession就是一个会话，相当于JDBC中的Connection对象。每次需要访问数据库时，都需要通过SqlSessionFactory创建一个SqlSession。</p>
-<p>它的生命周期是每一个数据库在应用程序里面全局唯一，并且和应用程序的生命周期一致。因为它会用到线程池，所以如果对一个数据库创建多个实例，会造成Connection过多小号，并且不利于统一管理。</p>
-<h1 id="SqlSession"><a href="#SqlSession" class="headerlink" title="SqlSession"></a>SqlSession</h1><p>SqlSession是一个会话，处理一次事务中的多条语句。</p>
-<p>它的生命周期应该是在请求数据库处理事务的过程中。</p>
-<p>它是一个线程不安全对象，不能共享；并且需要被几时关闭，避免资源浪费。</p>
-<h1 id="Mapper"><a href="#Mapper" class="headerlink" title="Mapper"></a>Mapper</h1><p>Mapper是一个接口，没有任何实现类。它的作用是发送SQL，然后返回我们需要的结果，或者执行SQL从而修改数据库的数据。</p>
-<p>它应该在一个SqlSession事务方法之内，是一个方法级别的对象。它的最大范围和SqlSession是相同的。尽量在一个SqlSession事务的方法中去获取它们，然后废弃掉。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/27/Mybatis学习笔记（二）-Example/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xien">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jepg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xien">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/27/Mybatis学习笔记（二）-Example/" itemprop="url">MyBatis学习笔记（二）　Example</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-27T10:54:55+08:00">
-                2017-10-27
-              </time>
+              <a href="/2017/10/27/MyBatis学习笔记（三）-生命周期/" rel="next" title="MyBatis学习笔记（三）　对象生命周期">
+                <i class="fa fa-chevron-left"></i> MyBatis学习笔记（三）　对象生命周期
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MyBatis/" itemprop="url" rel="index">
-                    <span itemprop="name">MyBatis</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/27/Mybatis学习笔记（二）-Example/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/27/Mybatis学习笔记（二）-Example/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/10/27/Mybatis学习笔记（二）-Example/" class="leancloud_visitors" data-flag-title="MyBatis学习笔记（二）　Example">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>本篇文章会搭建一个完备的简单的MyBatis程序。所有代码都是基于MyBatis 3.4.0进行的</p>
-<h1 id="Step１-Database"><a href="#Step１-Database" class="headerlink" title="Step１ Database"></a>Step１ Database</h1><p>创建数据库对应的表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE users (</div><div class="line">  id INT AUTO_INCREMENT,</div><div class="line">  name VARCHAR(64) NOT NULL,</div><div class="line">  description VARCHAR(255) NOT NULL DEFAULT &apos;&apos;,</div><div class="line">  INDEX(name),</div><div class="line">  PRIMARY KEY(id)</div><div class="line">) ENGINE = Innodb CHARSET = &apos;utf8&apos;;</div></pre></td></tr></table></figure>
-<p>创建了一个users的表，它有三个字：</p>
-<ol>
-<li>一个自增长的主键id</li>
-<li>一个VARCHAR类型的name字段，并且为它创建索引</li>
-<li>一个VARCHAR类型的description字段</li>
-</ol>
-<p>并且使用了Innodb作为存储引擎，字符集是UTF-8。</p>
-<p>相关的POJO对象：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.xien.example.pojo;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserBean</span> </span>&#123;</div><div class="line">  <span class="keyword">private</span> Integer id;</div><div class="line">  <span class="keyword">private</span> String name;</div><div class="line">  <span class="keyword">private</span> String description;</div><div class="line">  </div><div class="line">  <span class="comment">// related getters and setters</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="Step-2-MyBatis-Configuration"><a href="#Step-2-MyBatis-Configuration" class="headerlink" title="Step 2 MyBatis Configuration"></a>Step 2 MyBatis Configuration</h1><p>接下来需要创建MyBatis的配置文件mybatis-config.xml</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div><div class="line"><span class="meta">&lt;!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3.config.dtd"&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">  </div><div class="line">  <span class="tag">&lt;<span class="name">environments</span> <span class="attr">default</span>=<span class="string">"development"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">environment</span> <span class="attr">id</span>=<span class="string">"development"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">"JDBC"</span>/&gt;</span></div><div class="line">      </div><div class="line">      <span class="tag">&lt;<span class="name">dataSource</span> <span class="attr">type</span>=<span class="string">"POOLED"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driver"</span> <span class="attr">value</span>=<span class="string">"com.mysql.jdbc.Driver"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"jdbc:mysql://localhost:3306/user"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"root"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">""</span>/&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">dataSource</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">environment</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">environments</span>&gt;</span></div><div class="line">  </div><div class="line">  <span class="tag">&lt;<span class="name">mappers</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">"user.xml"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></div><div class="line">  </div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>MyBatis的配置文件是一个XML文件，在本例中，它只有简单的两个元素：</p>
-<ul>
-<li>environment,  负责配置一个环境，可以配置多个环境，以便在开发，测试时使用不同的环境。一个环境包含两个部分<ul>
-<li>transactionManager: 事务管理器，本例中使用JDBC事务管理</li>
-<li>dataSource：数据库连接信息，本例中使用连接池</li>
-</ul>
-</li>
-<li>mappers, 定义映射器，本例中只有一个映射器</li>
-</ul>
-<h1 id="Step-3-Mapper"><a href="#Step-3-Mapper" class="headerlink" title="Step 3 Mapper"></a>Step 3 Mapper</h1><p>接下来就该定义我们业务相关的映射器了。映射器是由一个Java接口和一个XML文件组成。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.xien.example.dao;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserDao</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> List&lt;UserBean&gt; <span class="title">getUsers</span><span class="params">(RowsBounds rowBounds)</span></span>;</div><div class="line">  </div><div class="line">  <span class="function"><span class="keyword">public</span> UserBean <span class="title">getUser</span><span class="params">(Integer id)</span></span>;</div><div class="line">  </div><div class="line">  <span class="function"><span class="keyword">public</span> UserBean <span class="title">getUserByName</span><span class="params">(String userName)</span></span>;</div><div class="line">  </div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">insertUser</span><span class="params">(UserBean user)</span></span>;</div><div class="line">  </div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">updateUser</span><span class="params">(UserBean user)</span></span>;</div><div class="line">  </div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">deleteUser</span><span class="params">(Integer id)</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">&lt;?xml vesion=r"1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="meta">&lt;!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"com.xien.example.dao.UserDao"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">sql</span> <span class="attr">id</span>=<span class="string">"user_columns"</span>&gt;</span></div><div class="line">    id, name, description</div><div class="line">  <span class="tag">&lt;/<span class="name">sql</span>&gt;</span></div><div class="line">  </div><div class="line">  <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getUsers"</span> <span class="attr">resultType</span>=<span class="string">"com.xien.example.pojo.UserBean"</span>&gt;</span></div><div class="line">  	SELECT <span class="tag">&lt;<span class="name">include</span> <span class="attr">refid</span>=<span class="string">"user_columns"</span>/&gt;</span> FROM users</div><div class="line">  <span class="tag">&lt;/<span class="name">select</span>&gt;</span></div><div class="line">  </div><div class="line">  <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getUser"</span> <span class="attr">parameterType</span>=<span class="string">"int"</span> <span class="attr">resultType</span>=<span class="string">"com.xien.example.pojo.UserBean"</span>&gt;</span></div><div class="line">    SELECT <span class="tag">&lt;<span class="name">include</span> <span class="attr">refid</span>=<span class="string">"user_columns"</span>/&gt;</span> FROM users WHERE id=#&#123;id&#125; </div><div class="line">  <span class="tag">&lt;/<span class="name">select</span>&gt;</span></div><div class="line">  </div><div class="line">  <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getUserByName"</span> <span class="attr">parameterType</span>=<span class="string">"string"</span> <span class="attr">resultType</span>=<span class="string">"com.xien.example.pojo.UserBean"</span>&gt;</span></div><div class="line">    SELECT <span class="tag">&lt;<span class="name">include</span> <span class="attr">refid</span>=<span class="string">"user_columns"</span>/&gt;</span> FROM users WHERE name=#&#123;userName&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">select</span>&gt;</span></div><div class="line">  </div><div class="line">  <span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"insertUser"</span> <span class="attr">parameterType</span>=<span class="string">"com.xien.example.pojo.UserBean"</span>&gt;</span></div><div class="line">    INSERT users(name, description) VALUE (#&#123;name&#125;, #&#123;description&#125;)</div><div class="line">  <span class="tag">&lt;/<span class="name">insert</span>&gt;</span></div><div class="line">  </div><div class="line">  <span class="tag">&lt;<span class="name">update</span> <span class="attr">id</span>=<span class="string">"updateUser"</span> <span class="attr">parameterType</span>=<span class="string">"com.xien.example.pojo.UserBean"</span>&gt;</span></div><div class="line">    UPDATE users SET name=#&#123;name&#125;, description=#&#123;description&#125; WHERE id=$&#123;id&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">update</span>&gt;</span></div><div class="line">  </div><div class="line">  <span class="tag">&lt;<span class="name">delete</span> <span class="attr">id</span>=<span class="string">"deleteUser"</span> <span class="attr">parameterType</span>=<span class="string">"int"</span>&gt;</span></div><div class="line">    DELETE FROM users WHERE id=#&#123;id&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">delete</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>至此，一个mapper定义完成了。可以看出来UserDao只是简单的定义了一些操作，包括它们名字，参数和返回值。这个接口方便开发者直接用Java进行调用，方便编译器的静态检查。另外，所有的SQL(业务逻辑)都是定义在XML映射文件中的。</p>
-<ul>
-<li>namespace, 定义了这个映射对应的接口，也是一个命名空间。</li>
-<li>sql, 这个是一个可选项，用来定义一个后面SQL语句中会经常用到的语句，本例中是列名，会被所有查询函数用到</li>
-<li>select，表面这是一个查询的语句，id表面它对应的方法名。namespace + id = interface + method，既可以用来对应接口和映射文件，也可以用来全局唯一限定一个语句。<ul>
-<li>parameterType，用来指定参数类型的</li>
-<li>resultType，用来指定返回的类型，MyBatis会自动识别返回的是一个对象还是一个对象的集合。</li>
-<li>insert/update/delete，和select类型，只是它们默认的resultType是int,　表示SQL所影响的行数　</li>
-</ul>
-</li>
-</ul>
-<h1 id="Step-4-SqlSessionFactory-amp-SqlSession"><a href="#Step-4-SqlSessionFactory-amp-SqlSession" class="headerlink" title="Step 4 SqlSessionFactory &amp; SqlSession"></a>Step 4 SqlSessionFactory &amp; SqlSession</h1><p>一切准备就绪了，可以把所有模块串在一起跑起来了</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Example</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SqlSessionFactory <span class="title">getSqlSessionFactory</span><span class="params">()</span> throw IOException </span>&#123;</div><div class="line">    String resource = <span class="string">"mybatis-config.xml"</span>;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> SqlSessionFactoryBuilder()</div><div class="line">      .build(Resources.getResourceAsStream(resource));</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">    <span class="keyword">try</span> (SqlSession session = getSqlSessionFactory().openSession()) &#123;</div><div class="line">     UserDao userDao = session.getMapper(UserDao.class);</div><div class="line">      UserBean user1 = <span class="keyword">new</span> UserBean();</div><div class="line">      user1.setId(<span class="number">1</span>);</div><div class="line">      user1.setName(<span class="string">"Xien"</span>);</div><div class="line">      user1.setDescription(<span class="string">"Just a programmer"</span>);</div><div class="line">      userDao.insertUser(user1);</div><div class="line">      </div><div class="line">      UserBean user2 = userDao.getUser(<span class="number">1</span>);</div><div class="line">      </div><div class="line">      userDao.deleteUser(<span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>MyBatis 的核心是SqlSession，可以理解为一个Transaction，通过它来拿到一个Ｍapper接口(通过动态代理实现)，然后对POJO和数据库进行操作。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -856,209 +500,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/26/Mybatis学习笔记（一）-简介/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xien">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jepg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xien">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/26/Mybatis学习笔记（一）-简介/" itemprop="url">MyBatis学习笔记（一） 简介</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-26T13:06:38+08:00">
-                2017-10-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MyBatis/" itemprop="url" rel="index">
-                    <span itemprop="name">MyBatis</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/26/Mybatis学习笔记（一）-简介/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/26/Mybatis学习笔记（一）-简介/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/10/26/Mybatis学习笔记（一）-简介/" class="leancloud_visitors" data-flag-title="MyBatis学习笔记（一） 简介">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="传统的JDBC编程"><a href="#传统的JDBC编程" class="headerlink" title="传统的JDBC编程"></a>传统的JDBC编程</h1><p><a href="https://en.wikipedia.org/wiki/Java_Database_Connectivity" target="_blank" rel="external">JDBC(Java Data Base Connectivity)</a> 是JAVA提供的数据库访问规范。典型的<a href="https://en.wikipedia.org/wiki/Bridge_pattern" target="_blank" rel="external">桥接模式</a>，将各种数据库的访问抽象成一个同一的接口，再针对各种数据库，具体的实现。</p>
-<ol>
-<li>初始化。（注册驱动，配置URL，Username，Password等配置）。Ｃlass.forName　是将具体的 Driver Class 加载到 JVM，然后通过它的静态初始化方法，把自身注册到 DriverManager 中。</li>
-<li>获取Connection连接（通过 DriverManager 或者 DataSource ）。DriverManager 是典型的工厂方法模式，利用 URL的格式和参数，来创建对应的 Connection。</li>
-<li>创建 Statement (包括PrepareStatement和CallableStatement) ，设置参数，执行SQL，查询请求会获取到ResultSet</li>
-<li>通过ResultSet获得一行或多行数据。通过代码转换成POJO对象</li>
-<li>关闭资源（ResultSet，Statement和Connection）</li>
-<li>如果用到事务，还需要主动commit，以及捕获异常，然后rollback</li>
-</ol>
-<p>这是通过JDBC操作数据库的一个标准流程，但是存在着很多问题：</p>
-<ol>
-<li>工作量相对较大，大量重复的样板代码。<strong>重复是个坏味道</strong>; </li>
-<li>需要对JDBC中可能出现的异常进行捕捉，处理，并且正确的关闭资源。</li>
-<li>需要程序员自己解决 SQL 注入等安全问题</li>
-</ol>
-<h1 id="ORM"><a href="#ORM" class="headerlink" title="ORM"></a><a href="https://en.wikipedia.org/wiki/Object-relational_mapping" target="_blank" rel="external">ORM</a></h1><p>由于JDBC的缺陷，实际工作中很少直接使用它(??)　于是提出了对象关系映射模型(ORM, Object Relational Mapping)。ORM就是关系型数据库表和简单Java对象( Plain Ordinary Java Object, 简称<a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank" rel="external">POJO</a>)的映射关系模型。</p>
-<h2 id="Hibernate"><a href="#Hibernate" class="headerlink" title="Hibernate"></a><a href="http://hibernate.org/" target="_blank" rel="external">Hibernate</a></h2><p><img src="https://static.jboss.org/hibernate/images/hibernate_logo_whitebkg_200px.png" alt="Hibernate"></p>
-<p>Hibernate 是一个流行的ORM框架，它具有以下特点：</p>
-<ol>
-<li>消除了代码的映射规则，把它分离到XML或者注解的配置里</li>
-<li>无需再手动管理数据库连接</li>
-<li>无需再操作多个对象，只需要session即可，也只需要关闭session一个资源</li>
-<li>但是它也是一个比较重的框架，基于全映射；不支持动态SQL；多表关联和复杂的SQL支持较差；不能很好的支持存储过程；虽然有HQL，但是性能较差</li>
-</ol>
-<h2 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a><a href="http://www.MyBatis.org/MyBatis-3/index.html" target="_blank" rel="external">MyBatis</a></h2><p><img src="http://www.MyBatis.org/images/MyBatis-logo.png" alt="MyBatis"></p>
-<p>MyBatis是一个半自动的持久化框架，它包含了SQL Maps和DAO(Data Access Objects)。除了提供映射关系以外，还需要我们自己提供SQL语句。它的映射文件包含了以下三个部分：</p>
-<ol>
-<li>SQL</li>
-<li>映射规则</li>
-<li>POJO</li>
-</ol>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ol>
-<li>JDBC在目前很少用到，它需要提供太多的代码，复杂的操作，还极其容易出问题</li>
-<li>HIberate是一个流行全自动ORM的框架，但是因为它包装过多，失去了灵活性和性能</li>
-<li>MyBatis是一个半自动的ORM框架，它提供了丰富而又灵活的功能。唯一的缺点是需要自己实现SQL，但也就是因为这样，给了程序员更好的灵活性。</li>
-</ol>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -1066,6 +512,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -1086,8 +546,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1161,6 +630,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#解析并准备SQL"><span class="nav-number">1.</span> <span class="nav-text">解析并准备SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#动态SQL"><span class="nav-number">1.1.</span> <span class="nav-text">动态SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#include"><span class="nav-number">1.1.1.</span> <span class="nav-text">include</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#if"><span class="nav-number">1.1.2.</span> <span class="nav-text">if</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#choose-when-otherwise"><span class="nav-number">1.1.3.</span> <span class="nav-text">choose, when, otherwise</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#where-trim"><span class="nav-number">1.1.4.</span> <span class="nav-text">where,trim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#set"><span class="nav-number">1.1.5.</span> <span class="nav-text">set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#foreach"><span class="nav-number">1.1.6.</span> <span class="nav-text">foreach</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bind"><span class="nav-number">1.1.7.</span> <span class="nav-text">bind</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1301,6 +786,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
@@ -1318,6 +807,18 @@
       <script id="dsq-count-scr" src="https://Xien7.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/10/27/MyBatis学习笔记（四）-运行周期/';
+          this.page.identifier = '2017/10/27/MyBatis学习笔记（四）-运行周期/';
+          this.page.title = 'MyBatis学习笔记（四）　运行周期';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://Xien7.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
