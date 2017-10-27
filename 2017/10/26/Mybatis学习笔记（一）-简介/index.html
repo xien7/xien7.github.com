@@ -82,16 +82,16 @@
 <meta name="description" content="传统的JDBC编程JDBC(Java Data Base Connectivity) 是JAVA提供的数据库访问规范。典型的桥接模式，将各种数据库的访问抽象成一个同一的接口，再针对各种数据库，具体的实现。  初始化。（注册驱动，配置URL，Username，Password等配置）。Ｃlass.forName　是将具体的 Driver Class 加载到 JVM，然后通过它的静态初始化方法，把自身">
 <meta name="keywords" content="Java,MyBatis,Database">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mybatis学习笔记（一） 简介">
+<meta property="og:title" content="MyBatis学习笔记（一） 简介">
 <meta property="og:url" content="http://yoursite.com/2017/10/26/Mybatis学习笔记（一）-简介/index.html">
 <meta property="og:site_name" content="Xien">
 <meta property="og:description" content="传统的JDBC编程JDBC(Java Data Base Connectivity) 是JAVA提供的数据库访问规范。典型的桥接模式，将各种数据库的访问抽象成一个同一的接口，再针对各种数据库，具体的实现。  初始化。（注册驱动，配置URL，Username，Password等配置）。Ｃlass.forName　是将具体的 Driver Class 加载到 JVM，然后通过它的静态初始化方法，把自身">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://static.jboss.org/hibernate/images/hibernate_logo_whitebkg_200px.png">
-<meta property="og:image" content="http://www.mybatis.org/images/mybatis-logo.png">
-<meta property="og:updated_time" content="2017-10-26T07:45:56.099Z">
+<meta property="og:image" content="http://www.MyBatis.org/images/MyBatis-logo.png">
+<meta property="og:updated_time" content="2017-10-27T02:57:23.322Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mybatis学习笔记（一） 简介">
+<meta name="twitter:title" content="MyBatis学习笔记（一） 简介">
 <meta name="twitter:description" content="传统的JDBC编程JDBC(Java Data Base Connectivity) 是JAVA提供的数据库访问规范。典型的桥接模式，将各种数据库的访问抽象成一个同一的接口，再针对各种数据库，具体的实现。  初始化。（注册驱动，配置URL，Username，Password等配置）。Ｃlass.forName　是将具体的 Driver Class 加载到 JVM，然后通过它的静态初始化方法，把自身">
 <meta name="twitter:image" content="https://static.jboss.org/hibernate/images/hibernate_logo_whitebkg_200px.png">
 
@@ -129,7 +129,7 @@
 
 
 
-  <title>Mybatis学习笔记（一） 简介 | Xien</title>
+  <title>MyBatis学习笔记（一） 简介 | Xien</title>
   
 
 
@@ -307,7 +307,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Mybatis学习笔记（一） 简介</h1>
+          <h1 class="post-title" itemprop="name headline">MyBatis学习笔记（一） 简介</h1>
         
 
         <div class="post-meta">
@@ -342,8 +342,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mybatis/" itemprop="url" rel="index">
-                    <span itemprop="name">mybatis</span>
+                  <a href="/categories/MyBatis/" itemprop="url" rel="index">
+                    <span itemprop="name">MyBatis</span>
                   </a>
                 </span>
 
@@ -370,7 +370,7 @@
 
           
           
-             <span id="/2017/10/26/Mybatis学习笔记（一）-简介/" class="leancloud_visitors" data-flag-title="Mybatis学习笔记（一） 简介">
+             <span id="/2017/10/26/Mybatis学习笔记（一）-简介/" class="leancloud_visitors" data-flag-title="MyBatis学习笔记（一） 简介">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -425,7 +425,7 @@
 <li>无需再操作多个对象，只需要session即可，也只需要关闭session一个资源</li>
 <li>但是它也是一个比较重的框架，基于全映射；不支持动态SQL；多表关联和复杂的SQL支持较差；不能很好的支持存储过程；虽然有HQL，但是性能较差</li>
 </ol>
-<h2 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a><a href="http://www.mybatis.org/mybatis-3/index.html" target="_blank" rel="external">MyBatis</a></h2><p><img src="http://www.mybatis.org/images/mybatis-logo.png" alt="MyBatis"></p>
+<h2 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a><a href="http://www.MyBatis.org/MyBatis-3/index.html" target="_blank" rel="external">MyBatis</a></h2><p><img src="http://www.MyBatis.org/images/MyBatis-logo.png" alt="MyBatis"></p>
 <p>MyBatis是一个半自动的持久化框架，它包含了SQL Maps和DAO(Data Access Objects)。除了提供映射关系以外，还需要我们自己提供SQL语句。它的映射文件包含了以下三个部分：</p>
 <ol>
 <li>SQL</li>
@@ -435,7 +435,7 @@
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ol>
 <li>JDBC在目前很少用到，它需要提供太多的代码，复杂的操作，还极其容易出问题</li>
 <li>HIberate是一个流行全自动ORM的框架，但是因为它包装过多，失去了灵活性和性能</li>
-<li>Mybatis是一个半自动的ORM框架，它提供了丰富而又灵活的功能。唯一的缺点是需要自己实现SQL，但也就是因为这样，给了程序员更好的灵活性。</li>
+<li>MyBatis是一个半自动的ORM框架，它提供了丰富而又灵活的功能。唯一的缺点是需要自己实现SQL，但也就是因为这样，给了程序员更好的灵活性。</li>
 </ol>
 
       
@@ -477,8 +477,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/27/Mybatis学习笔记（二）-Example/" rel="prev" title="Mybatis学习笔记（二）　Example">
-                Mybatis学习笔记（二）　Example <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/27/Mybatis学习笔记（二）-Example/" rel="prev" title="MyBatis学习笔记（二）　Example">
+                MyBatis学习笔记（二）　Example <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -581,7 +581,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -592,7 +592,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -807,7 +807,7 @@
         var disqus_config = function () {
           this.page.url = 'http://yoursite.com/2017/10/26/Mybatis学习笔记（一）-简介/';
           this.page.identifier = '2017/10/26/Mybatis学习笔记（一）-简介/';
-          this.page.title = 'Mybatis学习笔记（一） 简介';
+          this.page.title = 'MyBatis学习笔记（一） 简介';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://Xien7.disqus.com/embed.js';
