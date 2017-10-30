@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Java,MyBatis,Database," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="Just a programer">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Xien">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+<meta name="description" content="数据库是一个面向表和行的关系模型，而Java是面向类和对象的继承模式，并且Java中提供了丰富的集合，来表示对象之间的关联。解决Java的关联模型和数据库的关联模型，是ORM框架的另一个问题。 一对一MyBatis用association来表示一对一的关系，例如中国公民和身份证是一对一的关系。 数据库模型 12345678910111213CREATE TABLE users (  id INT">
+<meta name="keywords" content="Java,MyBatis,Database">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MyBatis学习笔记（五）　级联">
+<meta property="og:url" content="http://yoursite.com/2017/10/30/MyBatis学习笔记（五）-级联/index.html">
 <meta property="og:site_name" content="Xien">
-<meta property="og:description" content="Just a programer">
+<meta property="og:description" content="数据库是一个面向表和行的关系模型，而Java是面向类和对象的继承模式，并且Java中提供了丰富的集合，来表示对象之间的关联。解决Java的关联模型和数据库的关联模型，是ORM框架的另一个问题。 一对一MyBatis用association来表示一对一的关系，例如中国公民和身份证是一对一的关系。 数据库模型 12345678910111213CREATE TABLE users (  id INT">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-30T04:14:29.648Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xien">
-<meta name="twitter:description" content="Just a programer">
+<meta name="twitter:title" content="MyBatis学习笔记（五）　级联">
+<meta name="twitter:description" content="数据库是一个面向表和行的关系模型，而Java是面向类和对象的继承模式，并且Java中提供了丰富的集合，来表示对象之间的关联。解决Java的关联模型和数据库的关联模型，是ORM框架的另一个问题。 一对一MyBatis用association来表示一对一的关系，例如中国公民和身份证是一对一的关系。 数据库模型 12345678910111213CREATE TABLE users (  id INT">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2017/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/30/MyBatis学习笔记（五）-级联/"/>
 
 
 
 
 
-  <title>归档 | Xien</title>
+  <title>MyBatis学习笔记（五）　级联 | Xien</title>
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -271,222 +273,207 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/30/MyBatis学习笔记（五）-级联/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xien">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jepg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xien">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">MyBatis学习笔记（五）　级联</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-30T11:55:22+08:00">
+                2017-10-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 5 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MyBatis/" itemprop="url" rel="index">
+                    <span itemprop="name">MyBatis</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/30/MyBatis学习笔记（五）-级联/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/30/MyBatis学习笔记（五）-级联/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
+             <span id="/2017/10/30/MyBatis学习笔记（五）-级联/" class="leancloud_visitors" data-flag-title="MyBatis学习笔记（五）　级联">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/10/30/MyBatis学习笔记（五）-级联/" itemprop="url">
-              
-                <span itemprop="name">MyBatis学习笔记（五）　级联</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-30T11:55:22+08:00"
-              content="2017-10-30" >
-          10-30
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/10/27/MyBatis学习笔记（四）-运行周期/" itemprop="url">
-              
-                <span itemprop="name">MyBatis学习笔记（四）　运行周期</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-27T14:10:28+08:00"
-              content="2017-10-27" >
-          10-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/10/27/MyBatis学习笔记（三）-生命周期/" itemprop="url">
-              
-                <span itemprop="name">MyBatis学习笔记（三）　对象生命周期</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-27T13:48:28+08:00"
-              content="2017-10-27" >
-          10-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/10/27/Mybatis学习笔记（二）-Example/" itemprop="url">
-              
-                <span itemprop="name">MyBatis学习笔记（二）　Example</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-27T10:54:55+08:00"
-              content="2017-10-27" >
-          10-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>数据库是一个面向表和行的关系模型，而Java是面向类和对象的继承模式，并且Java中提供了丰富的集合，来表示对象之间的关联。解决Java的关联模型和数据库的关联模型，是ORM框架的另一个问题。</p>
+<h1 id="一对一"><a href="#一对一" class="headerlink" title="一对一"></a>一对一</h1><p>MyBatis用association来表示一对一的关系，例如中国公民和身份证是一对一的关系。</p>
+<p>数据库模型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE users (</div><div class="line">  id INT AUTO_INCREMENT,</div><div class="line">  name VARCHAR(64) NOT NULL,</div><div class="line">  PRIMARY KEY(id)</div><div class="line">);</div><div class="line"></div><div class="line">CREATE TABLE id_cards (</div><div class="line">  id INT AUTO_INCREMENT,</div><div class="line">  user_id INT,</div><div class="line">  number VARCHAR(18) NOT NULL,</div><div class="line">  PRIMARY KEY(id),</div><div class="line">  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE</div><div class="line">);</div></pre></td></tr></table></figure>
+<p>Java对象模型</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</div><div class="line">  <span class="keyword">private</span> Integer id;</div><div class="line">  <span class="keyword">private</span> String name;</div><div class="line">  <span class="keyword">private</span> IDCard idCard;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">IDCard</span> </span>&#123;</div><div class="line">  <span class="keyword">private</span> Integer id;</div><div class="line">  <span class="keyword">private</span> Integer userId;</div><div class="line">  <span class="keyword">private</span> String number;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>MyBatis 映射文件:</p>
+<p>user.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"com.xien.example.UserDao"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"userMap"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">id</span> <span class="attr">property</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"id"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"name"</span> <span class="attr">column</span>=<span class="string">"name"</span>/&gt;</span></div><div class="line">    </div><div class="line">    <span class="tag">&lt;<span class="name">association</span> <span class="attr">property</span>=<span class="string">"idCard"</span> <span class="attr">column</span>=<span class="string">"id"</span> <span class="attr">select</span>=<span class="string">"com.xien.example.IdCardDao.findIdCardByUserId"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></div><div class="line">  </div><div class="line">  <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getUser"</span> <span class="attr">parameterType</span>=<span class="string">"int"</span> <span class="attr">resultMap</span>=<span class="string">"userMap"</span>&gt;</span></div><div class="line">    SELECT id, name FROM users WHERE id=#&#123;id&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">select</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>idCard.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"com.xien.example.IdCardDao"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"idCardMap"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">id</span> <span class="attr">property</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"id"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"userId"</span> <span class="attr">column</span>=<span class="string">"user_id"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"number"</span> <span class="attr">column</span>=<span class="string">"number"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></div><div class="line">  </div><div class="line">  <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"findIdCardByUserId"</span> <span class="attr">parameterType</span>=<span class="string">"int"</span> <span class="attr">resultMap</span>=<span class="string">"idCardMap"</span>&gt;</span></div><div class="line">    SELECT id, user_id, number FROM id_cards WHERE user_id=#&#123;userId&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">select</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>通过user.xml中ResultMap的定义，我们可以知道User的idCard字段，是一个一对一的关联，它对应的查询方法是 “com.xien.example.IdCardDao.findIdCardByUserId”，并且将User的id作为参数传递过去。</p>
+<p>MyBatis在查询一个User的时候，分为两个查询。第一步，通过UserDao.getUser查询出User；第二步，根据User的id，调用IdCardDao.findIdCardByUserId查询对应的IdCard。（如果设置了延迟加载，那么第二部只有到调用User.getIdCard()时才会去加载IdCard）</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/10/26/Mybatis学习笔记（一）-简介/" itemprop="url">
-              
-                <span itemprop="name">MyBatis学习笔记（一） 简介</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-26T13:06:38+08:00"
-              content="2017-10-26" >
-          10-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/MyBatis/" rel="tag"># MyBatis</a>
+          
+            <a href="/tags/Database/" rel="tag"># Database</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/27/MyBatis学习笔记（四）-运行周期/" rel="next" title="MyBatis学习笔记（四）　运行周期">
+                <i class="fa fa-chevron-left"></i> MyBatis学习笔记（四）　运行周期
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -494,6 +481,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -514,8 +515,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -589,6 +599,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一对一"><span class="nav-number">1.</span> <span class="nav-text">一对一</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -729,6 +755,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
@@ -746,6 +776,18 @@
       <script id="dsq-count-scr" src="https://Xien7.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/10/30/MyBatis学习笔记（五）-级联/';
+          this.page.identifier = '2017/10/30/MyBatis学习笔记（五）-级联/';
+          this.page.title = 'MyBatis学习笔记（五）　级联';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://Xien7.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
