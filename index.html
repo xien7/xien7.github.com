@@ -401,7 +401,58 @@
       
         
           
-            
+            <h1 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h1><p>MyBatis支持两级缓存。</p>
+<ol>
+<li>第一级是在SqlSession级别的，同一个SqlSession有自己独立的一个缓存，它默认是开启的</li>
+<li>第二级是SqlSessionFactory级别的，跨SqlSession共享的，默认不开启。如果需要开启二级缓存，需要做：<ol>
+<li>所有用到的POJO对象，必须实现Serializable接口，包括级联的对象</li>
+<li>在映射文件中加入<cache>，它控制缓存的很多配置，默认如下<ul>
+<li>所有select语句将被缓存。</li>
+<li>所有的insert、update和delete将舒心缓存</li>
+<li>默认使用LRUlai 来进行回收，可通过eviction来进行配置，支持LRU, FIFO, SOFT, WEEK。</li>
+<li>可以按照固定间隔来刷新缓存，默认是不刷新，通过flushInterval来配置，单位为ms</li>
+<li>缓存默认大小是1024个对象引用，可以通过size来配置</li>
+<li>默认是read/write缓存，可以通过readOnly配置为只读的。</li>
+</ul>
+</cache></li>
+</ol>
+</li>
+</ol>
+<p>另外MyBatis支持我们自定义扩展二级缓存，只需要实现org.apache.ibatis.cache.Cache即可</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Cache</span> </span>&#123;</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line"><span class="comment">   * <span class="doctag">@return</span> The identifier of this cache</span></div><div class="line"><span class="comment">   */</span></div><div class="line">  <span class="function">String <span class="title">getId</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line"><span class="comment">   * <span class="doctag">@param</span> key Can be any object but usually it is a &#123;<span class="doctag">@link</span> CacheKey&#125;</span></div><div class="line"><span class="comment">   * <span class="doctag">@param</span> value The result of a select.</span></div><div class="line"><span class="comment">   */</span></div><div class="line">  <span class="function"><span class="keyword">void</span> <span class="title">putObject</span><span class="params">(Object key, Object value)</span></span>;</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line"><span class="comment">   * <span class="doctag">@param</span> key The key</span></div><div class="line"><span class="comment">   * <span class="doctag">@return</span> The object stored in the cache.</span></div><div class="line"><span class="comment">   */</span></div><div class="line">  <span class="function">Object <span class="title">getObject</span><span class="params">(Object key)</span></span>;</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line"><span class="comment">   * As of 3.3.0 this method is only called during a rollback </span></div><div class="line"><span class="comment">   * for any previous value that was missing in the cache.</span></div><div class="line"><span class="comment">   * This lets any blocking cache to release the lock that </span></div><div class="line"><span class="comment">   * may have previously put on the key.</span></div><div class="line"><span class="comment">   * A blocking cache puts a lock when a value is null </span></div><div class="line"><span class="comment">   * and releases it when the value is back again.</span></div><div class="line"><span class="comment">   * This way other threads will wait for the value to be </span></div><div class="line"><span class="comment">   * available instead of hitting the database.</span></div><div class="line"><span class="comment">   *</span></div><div class="line"><span class="comment">   * </span></div><div class="line"><span class="comment">   * <span class="doctag">@param</span> key The key</span></div><div class="line"><span class="comment">   * <span class="doctag">@return</span> Not used</span></div><div class="line"><span class="comment">   */</span></div><div class="line">  <span class="function">Object <span class="title">removeObject</span><span class="params">(Object key)</span></span>;</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line"><span class="comment">   * Clears this cache instance</span></div><div class="line"><span class="comment">   */</span>  </div><div class="line">  <span class="function"><span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line"><span class="comment">   * Optional. This method is not called by the core.</span></div><div class="line"><span class="comment">   * </span></div><div class="line"><span class="comment">   * <span class="doctag">@return</span> The number of elements stored in the cache (not its capacity).</span></div><div class="line"><span class="comment">   */</span></div><div class="line">  <span class="function"><span class="keyword">int</span> <span class="title">getSize</span><span class="params">()</span></span>;</div><div class="line">  </div><div class="line">  <span class="comment">/** </span></div><div class="line"><span class="comment">   * Optional. As of 3.2.6 this method is no longer called by the core.</span></div><div class="line"><span class="comment">   *  </span></div><div class="line"><span class="comment">   * Any locking needed by the cache must be provided internally by the cache provider.</span></div><div class="line"><span class="comment">   * </span></div><div class="line"><span class="comment">   * <span class="doctag">@return</span> A ReadWriteLock </span></div><div class="line"><span class="comment">   */</span></div><div class="line">  <span class="function">ReadWriteLock <span class="title">getReadWriteLock</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后我们在映射文件中配置我们的实现即可</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">cache</span> <span class="attr">type</span>=<span class="string">"com.xien.example.MyCache"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"host"</span> <span class="attr">value</span>=<span class="string">"localhost"</span></span></div><div class="line">&lt;/cache&gt;</div></pre></td></tr></table></figure>
+<p>MyBatis对于缓存的property会通过反射找到对于的方法，并且调用，例如MyCache.setHost(“localhost”);</p>
+<p>另外，我们在映射器上，可以配置select, update, insert, delete的缓存使用策略。useCache表示是否需要使用缓存；flushCache表示执行完语句是否需要刷新缓存。</p>
+<h1 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h1><p>分页是对于数据量大的表查询时，常用到的一个操作。MyBatis支持两种分页技术：</p>
+<ol>
+<li><p>RowBounds，在查询的时候，通过Dao接口传入RowBounds参数，它会自动的将结果分页，然后返回。它有两个参数，offset（默认是0）和limit（默认是最大整数2147483647）。但是这种方式，是将SQL语句的结果全部fetch到客户端，然后在客户端进行分页，效率低，开销大</p>
+</li>
+<li><p>插件分页，通过改写SQL的方式，插入分页语句。例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT id, name FROM users</div></pre></td></tr></table></figure>
+<p>被改写为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT * FROM (SELECT id, name FROM users) LIMIT 100, 20</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="分库"><a href="#分库" class="headerlink" title="分库"></a>分库</h1><p>MyBatis也支持分表分库的操作，具体实现是在Dao的接口中，将表名或者数据库名通过参数传入，然后在映射文件的SQL中进行引用替换，例如</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> Bill <span class="title">getBill</span><span class="params">(@Param(<span class="string">"dbName"</span>)</span>String dbName, @<span class="title">Param</span><span class="params">(<span class="string">"partName"</span>)</span>)String partitionName, @<span class="title">Param</span><span class="params">(<span class="string">"id"</span>)</span><span class="keyword">int</span> id)</span>;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT id, bill_name AS billName, note FROM $&#123;dbName&#125;.bills_$&#123;partName&#125; WHERE id=#&#123;id&#125;</div></pre></td></tr></table></figure>
+<p>${…}和#{…}的区别在于，\$被直接当初字符串来替换，不管类型；而#会做参数绑定</p>
+<h1 id="和Spring的集成"><a href="#和Spring的集成" class="headerlink" title="和Spring的集成"></a>和Spring的集成</h1><p>MyBatis通过mybatis-spring框架来和spring集成：</p>
+<ul>
+<li>使用spring来创建dataSource和SqlSessionFactory</li>
+<li>使用spring来管理会话SqlSession</li>
+<li>使用spring来创建和注入Mapper，以及管理它的生命周期</li>
+</ul>
+<p>具体内容在以后设计spring的文章里会详细阐述</p>
+<h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><p>MyBatis通过职责连的模式来实现插件，可以对它的四大部件的任意方法进行拦截，从而实现用户定制的行为。四大组件为：</p>
+<ul>
+<li>Executor，MyBatis所有任务的调度执行器。有SIMPLE（默认）, REUSE（重用预处理语句）和BATCH（批处理）三种。</li>
+<li>StatementHandler，负责解析和创建语句，使用普通的Statement, PreparedStatement还是CallableStatement</li>
+<li>ParameterHander，负责设置参数</li>
+<li>ResultHandler，负责组装结果</li>
+</ul>
+
           
         
       
